@@ -112,7 +112,7 @@ namespace PotterShoppingCart.Tests
         }
 
         [TestMethod]
-        public void Test_Buy_PotterBookI_BookII_BookIII_BookIV_1EA_price_100()  //一二三四集各買了一本，價格應為100*4*0.8=320
+        public void Test_Buy_PotterBookI_BookII_BookIII_BookIV_1EA_price_100() //一二三四集各買了一本，價格應為100*4*0.8=320
         {
             //arrange
             var books = new List<Book>
