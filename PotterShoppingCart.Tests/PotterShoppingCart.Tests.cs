@@ -104,7 +104,7 @@ namespace PotterShoppingCart.Tests
                 new Book {BookName = "哈利波特", Episode = 3, Price = 100},
             };
             var target = new ShoppingCart();
-            var expected = 190;
+            var expected = 270;
             //act
             var actual = target.Get_Price(books);
             //assert
