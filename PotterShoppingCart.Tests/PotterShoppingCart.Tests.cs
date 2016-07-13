@@ -166,7 +166,7 @@ namespace PotterShoppingCart.Tests
 
             };
             var target = new ShoppingCart();
-            var expected = 305;
+            var expected = 370;
             //act
             var actual = target.Get_Price(books);
             //assert
