@@ -173,7 +173,6 @@ namespace PotterShoppingCart.Tests
             Assert.AreEqual(expected, actual);
         }
 
-
         [TestMethod]
         public void Test_Buy_PotterBookI_1EA_BookII_2EA_BookIII_2EA_price_100() //第一集買了一本，第二三集各買了兩本，價格應為100*3*0.9 + 100*2*0.95 = 460
         {
@@ -188,11 +187,13 @@ namespace PotterShoppingCart.Tests
 
             };
             var target = new ShoppingCart();
-            var expected = 370;
+            var expected = 460;
             //act
             var actual = target.Get_Price(books);
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+         
     }
 }
