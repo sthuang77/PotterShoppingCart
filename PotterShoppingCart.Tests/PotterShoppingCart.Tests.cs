@@ -154,12 +154,34 @@ namespace PotterShoppingCart.Tests
 
 
         [TestMethod]
-        public void Test_Buy_PotterBookI_BookII_1EA_BookIII_1EA_price_100() //一二集各買了一本，第三集買了兩本，價格應為100*3*0.9 + 100 = 370
+        public void Test_Buy_PotterBookI_BookII_1EA_BookIII_2EA_price_100() //一二集各買了一本，第三集買了兩本，價格應為100*3*0.9 + 100 = 370
         {
             //arrange
             var books = new List<Book>
             {
                 new Book {BookName = "哈利波特", Episode = 1, Price = 100},
+                new Book {BookName = "哈利波特", Episode = 2, Price = 100},
+                new Book {BookName = "哈利波特", Episode = 3, Price = 100},
+                new Book {BookName = "哈利波特", Episode = 3, Price = 100},
+
+            };
+            var target = new ShoppingCart();
+            var expected = 370;
+            //act
+            var actual = target.Get_Price(books);
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestMethod]
+        public void Test_Buy_PotterBookI_1EA_BookII_2EA_BookIII_2EA_price_100() //第一集買了一本，第二三集各買了兩本，價格應為100*3*0.9 + 100*2*0.95 = 460
+        {
+            //arrange
+            var books = new List<Book>
+            {
+                new Book {BookName = "哈利波特", Episode = 1, Price = 100},
+                new Book {BookName = "哈利波特", Episode = 2, Price = 100},
                 new Book {BookName = "哈利波特", Episode = 2, Price = 100},
                 new Book {BookName = "哈利波特", Episode = 3, Price = 100},
                 new Book {BookName = "哈利波特", Episode = 3, Price = 100},
